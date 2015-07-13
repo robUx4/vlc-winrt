@@ -1,7 +1,0 @@
-vlc/
-*.dll
-*.lib
-*.la
-*.def
-*.exp
-newspecfile
