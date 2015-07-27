@@ -140,7 +140,16 @@ namespace VLC_WinRT.Model.Video
             set
             {
                 SetProperty(ref _timeWatched, value);
-                OnPropertyChanged("PortionWatched");
+                OnPropertyChanged("HasBeenSeen");
+            }
+        }
+
+        [Ignore]
+        public bool HasBeenSeen
+        {
+            get
+            {
+                return TimeWatched.Seconds > 0;
             }
         }
 
@@ -223,6 +232,12 @@ namespace VLC_WinRT.Model.Video
             if (_duration != TimeSpan.Zero) return;
             var media = Locator.VLCService.GetMediaFromPath(_filePath);
             var duration = Locator.VLCService.GetDuration(media);
+            if(duration == null || duration == TimeSpan.Zero)
+            {
+                var mP = await File.Properties.GetVideoPropertiesAsync();
+                duration = mP.Duration;
+            }
+
             await App.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
                 Duration = duration;

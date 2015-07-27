@@ -32,16 +32,16 @@
         <Grid Grid.Row="0"
               Grid.RowSpan="2">
             <Ellipse Fill="{ThemeResource ApplicationThirdForegroundThemeBrush}"
-                     Height="60"
-                     Width="60" />
+                     Height="80"
+                     Width="80" />
             <FontIcon Glyph="{StaticResource BuddySymbol}"
                       FontFamily="ms-appx:SEGMDL2.TTF#Segoe MDL2 Assets"
-                      FontSize="26"
+                      FontSize="29"
                       Foreground="{ThemeResource MainColor}" />
         </Grid>
         <Ellipse Grid.RowSpan="2"
-                 Height="60"
-                 Width="60">
+                 Height="80"
+                 Width="80">
             <Ellipse.Fill>
                 <ImageBrush Stretch="UniformToFill"
                             ImageSource="{Binding ArtistImage}" />
@@ -50,15 +50,16 @@
         <TextBlock Grid.Column="2"
                    Grid.Row="0"
                    Text="{Binding Name, Converter={StaticResource ArtistStringConverter}}"
-                   FontSize="21"
-                   FontWeight="Light" 
-                   VerticalAlignment="Bottom"/>
+                   FontSize="22"
+                   FontWeight="Light"
+                   VerticalAlignment="Bottom"
+                   TextTrimming="CharacterEllipsis"/>
         <TextBlock Grid.Column="2"
                    Grid.Row="1"
                    Foreground="{ThemeResource ApplicationSecondaryForegroundThemeBrush}"
                    VerticalAlignment="Top"
                    FontWeight="SemiLight"
-                   FontSize="15">
+                   FontSize="16">
             <Run Text="{Binding Albums.Count}" />
             <Run Text="albums" />
         </TextBlock>

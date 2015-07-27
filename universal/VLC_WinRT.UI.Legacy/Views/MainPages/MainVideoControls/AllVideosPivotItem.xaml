@@ -10,7 +10,7 @@
       d:DesignHeight="300"
       d:DesignWidth="400"
       DataContext="{Binding Source={StaticResource Locator}, Path=VideoLibraryVM}">
-    
+
     <Grid>
         <ListView ItemsSource="{Binding Videos}"
                   ItemTemplate="{StaticResource PhoneCompactVideoTemplate}"
@@ -27,6 +27,7 @@
             <ListView.ItemContainerTransitions>
                 <TransitionCollection>
                     <AddDeleteThemeTransition />
+                    <RepositionThemeTransition />
                     <EntranceThemeTransition FromHorizontalOffset="50"
                                              FromVerticalOffset="0" />
                 </TransitionCollection>
@@ -39,8 +40,6 @@
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
         </ListView>
-        <placeholder:NoVideosPlaceholder Grid.Row="1"
-                                         Margin="0,50,0,0"
-                                         Visibility="{Binding Videos.Count, Converter={StaticResource CountToVisibilityConverter}}" />
+        <placeholder:NoVideosPlaceholder Visibility="{Binding Videos.Count, Converter={StaticResource CountToVisibilityConverter}}" />
     </Grid>
 </Page>

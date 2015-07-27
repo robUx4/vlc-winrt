@@ -40,7 +40,7 @@
             <RowDefinition Height="40" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="0"
-              Background="{ThemeResource ApplicationThirdForegroundThemeBrush}"
+              Background="{ThemeResource ApplicationOverlayTranslucentThemeBrush}"
               PointerEntered="Cover_PointerEntered">
             <FontIcon Glyph="{StaticResource AlbumDiscSymbol}"
                       FontFamily="ms-appx:SEGMDL2.TTF#Segoe MDL2 Assets"
@@ -55,7 +55,7 @@
               Grid.Row="0"
               Visibility="Collapsed"
               RequestedTheme="Dark"
-              Background="{ThemeResource ApplicationBackgroundSemiTranslucentThemeBrush}"
+              Background="{ThemeResource ApplicationOverlayTranslucentThemeBrush}"
               PointerExited="Cover_PointerExited">
             <AppBarButton Style="{StaticResource AppBarButtonStyleHuge}"
                           Label="Play album"
@@ -80,7 +80,7 @@
                        FontSize="15"
                        FontWeight="Normal"
                        VerticalAlignment="Center"
-                       Margin="0,0,7,0" />
+                       Margin="0,3,7,0" />
             <TextBlock Grid.Row="1"
                        Text="{Binding Artist, Converter={StaticResource ArtistStringConverter}}"
                        TextWrapping="NoWrap"

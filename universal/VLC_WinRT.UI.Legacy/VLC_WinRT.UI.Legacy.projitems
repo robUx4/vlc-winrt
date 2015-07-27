@@ -69,9 +69,6 @@
     <Page Include="$(MSBuildThisFileDirectory)Views\MainPages\MainVideoControls\ShowsPivotItem.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="$(MSBuildThisFileDirectory)Views\MainPages\MainVideoControls\VideoPanesControls\VideoPaneButtons.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\MainPages\MainVideoControls\VideoPanesControls\VideoPaneComboBox.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -81,19 +78,7 @@
     <Page Include="$(MSBuildThisFileDirectory)Views\MainPages\MusicPanes\ArtistCollectionBase.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="$(MSBuildThisFileDirectory)Views\MainPages\MusicPanes\ArtistCollectionPanes\AlbumsListView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="$(MSBuildThisFileDirectory)Views\MainPages\MusicPanes\ArtistCollectionPanes\ArtistsListView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="$(MSBuildThisFileDirectory)Views\MainPages\MusicPanes\ArtistCollectionPanes\TracksListView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\MainPages\MusicPanes\MusicPanesControls\AlbumsCollectionButtons.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="$(MSBuildThisFileDirectory)Views\MainPages\MusicPanes\MusicPanesControls\MusicPaneButtons.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\MainPages\MusicPanes\MusicSearchPane.xaml">
@@ -103,9 +88,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\MainPages\MusicPanes\SongsPivotItem.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="$(MSBuildThisFileDirectory)Views\MusicPages\AlbumPageControls\AlbumHeaderControls.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\MusicPages\AlbumPageControls\AlbumPageBase.xaml">
@@ -165,9 +147,6 @@
     <Page Include="$(MSBuildThisFileDirectory)Views\UserControls\ArtistHorizontalTemplate.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="$(MSBuildThisFileDirectory)Views\UserControls\ArtistItemTemplate.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\UserControls\BottomMiniPlayer.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -184,6 +163,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\UserControls\Flyouts\TrackItemFlyout.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\UserControls\Flyouts\VideoInformationFlyout.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\UserControls\FocusTextBox.xaml">
@@ -255,9 +237,6 @@
     <Page Include="$(MSBuildThisFileDirectory)Views\UserControls\TrackItemTemplateDetailed.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="$(MSBuildThisFileDirectory)Views\UserControls\VideoInformationFlyout.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\UserControls\VLCLogoWithGradient.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -314,9 +293,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainPages\MainVideoControls\ShowsPivotItem.xaml.cs">
       <DependentUpon>ShowsPivotItem.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Views\MainPages\MainVideoControls\VideoPanesControls\VideoPaneButtons.xaml.cs">
-      <DependentUpon>VideoPaneButtons.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainPages\MainVideoControls\VideoPanesControls\VideoPaneComboBox.xaml.cs">
       <DependentUpon>VideoPaneComboBox.xaml</DependentUpon>
     </Compile>
@@ -326,20 +302,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainPages\MusicPanes\ArtistCollectionBase.xaml.cs">
       <DependentUpon>ArtistCollectionBase.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Views\MainPages\MusicPanes\ArtistCollectionPanes\AlbumsListView.xaml.cs">
-      <DependentUpon>AlbumsListView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Views\MainPages\MusicPanes\ArtistCollectionPanes\ArtistsListView.xaml.cs">
-      <DependentUpon>ArtistsListView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Views\MainPages\MusicPanes\ArtistCollectionPanes\TracksListView.xaml.cs">
-      <DependentUpon>TracksListView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainPages\MusicPanes\MusicPanesControls\AlbumsCollectionButtons.xaml.cs">
       <DependentUpon>AlbumsCollectionButtons.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Views\MainPages\MusicPanes\MusicPanesControls\MusicPaneButtons.xaml.cs">
-      <DependentUpon>MusicPaneButtons.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainPages\MusicPanes\MusicSearchPane.xaml.cs">
       <DependentUpon>MusicSearchPane.xaml</DependentUpon>
@@ -349,9 +313,6 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainPages\MusicPanes\SongsPivotItem.xaml.cs">
       <DependentUpon>SongsPivotItem.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Views\MusicPages\AlbumPageControls\AlbumHeaderControls.xaml.cs">
-      <DependentUpon>AlbumHeaderControls.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\MusicPages\AlbumPageControls\AlbumPageBase.xaml.cs">
       <DependentUpon>AlbumPageBase.xaml</DependentUpon>
@@ -410,9 +371,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\UserControls\ArtistHorizontalTemplate.xaml.cs">
       <DependentUpon>ArtistHorizontalTemplate.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Views\UserControls\ArtistItemTemplate.xaml.cs">
-      <DependentUpon>ArtistItemTemplate.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\UserControls\BottomMiniPlayer.xaml.cs">
       <DependentUpon>BottomMiniPlayer.xaml</DependentUpon>
     </Compile>
@@ -430,6 +388,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\UserControls\Flyouts\TrackItemFlyout.xaml.cs">
       <DependentUpon>TrackItemFlyout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\UserControls\Flyouts\VideoInformationFlyout.xaml.cs">
+      <DependentUpon>VideoInformationFlyout.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\UserControls\FocusTextBox.xaml.cs">
       <DependentUpon>FocusTextBox.xaml</DependentUpon>
@@ -499,9 +460,6 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\UserControls\TrackItemTemplateDetailed.xaml.cs">
       <DependentUpon>TrackItemTemplateDetailed.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Views\UserControls\VideoInformationFlyout.xaml.cs">
-      <DependentUpon>VideoInformationFlyout.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\UserControls\VLCLogoWithGradient.xaml.cs">
       <DependentUpon>VLCLogoWithGradient.xaml</DependentUpon>

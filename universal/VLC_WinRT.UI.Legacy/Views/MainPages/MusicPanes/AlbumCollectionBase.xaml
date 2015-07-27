@@ -16,13 +16,12 @@
                               Source="{Binding GroupedAlbums}" />
     </UserControl.Resources>
     <Grid>
-        <controls:NothingToSeeHere Grid.Row="0"
-                                   Visibility="{Binding Albums.Count, Converter={StaticResource CountToVisibilityConverter}}" />
+        <controls:NothingToSeeHere Visibility="{Binding Albums.Count, Converter={StaticResource CountToVisibilityConverter}}" />
         <SemanticZoom Padding="0"
                       ViewChangeCompleted="SemanticZoom_OnViewChangeCompleted">
             <SemanticZoom.ZoomedInView>
                 <ListView ItemsSource="{Binding Source={StaticResource GroupAlbums}}"
-                          ItemTemplate="{StaticResource PhoneSemanticZoomInViewAlbumTemplateLittleSize}"
+                          ItemTemplate="{StaticResource AlbumItemTemplate}"
                           ItemContainerStyle="{StaticResource ListViewItemStyle}"
                           IsItemClickEnabled="True"
                           SelectionMode="None"
