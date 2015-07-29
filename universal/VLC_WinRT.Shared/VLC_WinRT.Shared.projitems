@@ -40,7 +40,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Commands\MusicLibrary\AddToPlaylistCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\MusicLibrary\AlbumClickedCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\MusicLibrary\AlbumTrackClickedCommand.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Commands\MusicLibrary\ArtistAlbumsSemanticZoomInvertZoomCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\MusicLibrary\ArtistClickedCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\MusicLibrary\BingLocationShowCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Commands\MusicLibrary\ChangeAlbumArtCommand.cs" />
@@ -153,7 +152,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\PlayerEngine.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\PlayingType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Search\SearchResult.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\SidebarState.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Stream\StreamMedia.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Subtitle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Video\TVShow.cs" />
@@ -198,6 +196,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MusicVM\MusicPlayerVM.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MusicVM\TrackCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Others\BackerCountryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Others\SearchViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Others\SpecialThanksViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Others\VlcExplorer\VLCExplorerViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Others\VlcExplorer\FileExplorerViewModel.cs" />

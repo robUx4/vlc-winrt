@@ -40,7 +40,6 @@ namespace VLC_WinRT.ViewModels.MusicVM
         public TaskCompletionSource<bool> MusicCollectionLoaded = new TaskCompletionSource<bool>();
         #endregion
         #region private fields
-        private ObservableCollection<AlbumItem> _searchResults = new ObservableCollection<AlbumItem>();
         private ObservableCollection<ArtistItem> _artists = new ObservableCollection<ArtistItem>();
         private ObservableCollection<TrackItem> _tracks = new ObservableCollection<TrackItem>();
         private ObservableCollection<AlbumItem> _favoriteAlbums = new ObservableCollection<AlbumItem>();
@@ -53,7 +52,6 @@ namespace VLC_WinRT.ViewModels.MusicVM
         private IEnumerable<IGrouping<string, ArtistItem>> _groupedArtists;
         #endregion
         #region private props
-        private SidebarState _sidebarState;
         private LoadingState _loadingState = LoadingState.NotLoaded;
 
         private AlbumItem _currentAlbum;
@@ -62,18 +60,10 @@ namespace VLC_WinRT.ViewModels.MusicVM
         private bool _isLoaded = false;
         private bool _isBusy = false;
         private bool _isMusicLibraryEmpty = true;
-        private bool _isAlbumPageShown = false;
-        private bool _isMainPageMusicArtistAlbumsSemanticZoomViewedIn;
         public MusicView _musicView;
-        private string _searchTag;
         #endregion
 
         #region public fields
-        public ObservableCollection<AlbumItem> SearchResults
-        {
-            get { return _searchResults; }
-            set { SetProperty(ref _searchResults, value); }
-        }
 
         public ObservableCollection<TrackCollection> TrackCollections
         {
@@ -136,30 +126,13 @@ namespace VLC_WinRT.ViewModels.MusicVM
             get { return _musicView; }
             set { SetProperty(ref _musicView, value); }
         }
-
-        public SidebarState SidebarState
-        {
-            get { return _sidebarState; }
-            set { SetProperty(ref _sidebarState, value); }
-        }
-
+        
         public LoadingState LoadingState
         {
             get { return _loadingState; }
             set { SetProperty(ref _loadingState, value); }
         }
         
-        public bool IsAlbumPageShown
-        {
-            get { return _isAlbumPageShown; }
-            set { SetProperty(ref _isAlbumPageShown, value); }
-        }
-
-        public bool IsMainPageMusicArtistAlbumsSemanticZoomViewedIn
-        {
-            get { return _isMainPageMusicArtistAlbumsSemanticZoomViewedIn; }
-            set { SetProperty(ref _isMainPageMusicArtistAlbumsSemanticZoomViewedIn, value); }
-        }
         public bool IsLoaded
         {
             get { return _isLoaded; }
@@ -177,20 +150,7 @@ namespace VLC_WinRT.ViewModels.MusicVM
             get { return _isMusicLibraryEmpty; }
             set { SetProperty(ref _isMusicLibraryEmpty, value); }
         }
-
-        public string SearchTag
-        {
-            get { return _searchTag; }
-            set
-            {
-                if (string.IsNullOrEmpty(_searchTag) && !string.IsNullOrEmpty(value) && (int)MusicView != 4)
-                    Locator.MainVM.ChangeMainPageMusicViewCommand.Execute(4);
-                if (!string.IsNullOrEmpty(value) && value.Length > 1)
-                    SearchHelpers.SearchAlbums(value, SearchResults);
-                SetProperty(ref _searchTag, value);
-            }
-        }
-
+        
         public StartMusicIndexingCommand StartMusicIndexingCommand { get; } = new StartMusicIndexingCommand();
 
         public AddToPlaylistCommand AddToPlaylistCommand { get; } = new AddToPlaylistCommand();
@@ -198,9 +158,7 @@ namespace VLC_WinRT.ViewModels.MusicVM
         public TrackCollectionClickedCommand TrackCollectionClickedCommand { get; } = new TrackCollectionClickedCommand();
 
         public ShowCreateNewPlaylistPane ShowCreateNewPlaylistPaneCommand { get; } = new ShowCreateNewPlaylistPane();
-
-        public ArtistAlbumsSemanticZoomInvertZoomCommand ArtistAlbumsSemanticZoomInvertZoomCommand { get; } = new ArtistAlbumsSemanticZoomInvertZoomCommand();
-
+        
         public ChangeAlbumArtCommand ChangeAlbumArtCommand { get; } = new ChangeAlbumArtCommand();
 
         public DownloadAlbumArtCommand DownloadAlbumArtCommand { get; } = new DownloadAlbumArtCommand();

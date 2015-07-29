@@ -148,6 +148,11 @@ namespace VLC_WinRT.Helpers.MusicLibrary
             var files = await fileQueryResult.GetFilesAsync();
             foreach (var item in files)
             {
+                if (Locator.MediaPlaybackViewModel.ContinueIndexing != null) // We prevent indexing this file and upcoming files when a video is playing
+                {
+                    await Locator.MediaPlaybackViewModel.ContinueIndexing.Task;
+                    Locator.MediaPlaybackViewModel.ContinueIndexing = null;
+                }
                 await DiscoverTrackItemOrWaitAsync(item);
             }
         }
@@ -179,7 +184,7 @@ namespace VLC_WinRT.Helpers.MusicLibrary
         {
             try
             {
-                if (Locator.MediaPlaybackViewModel.ContinueIndexing != null)
+                if (Locator.MediaPlaybackViewModel.ContinueIndexing != null) // We prevent indexing new folder and files recursively when a Video is playing
                 {
                     await Locator.MediaPlaybackViewModel.ContinueIndexing.Task;
                     Locator.MediaPlaybackViewModel.ContinueIndexing = null;
@@ -232,8 +237,8 @@ namespace VLC_WinRT.Helpers.MusicLibrary
                 }
                 if (mP != null)
                 {
-                    var artistName = mP.Artist;
-                    var albumArtistName = mP.AlbumArtist;
+                    var artistName = mP.Artist?.Trim();
+                    var albumArtistName = mP.AlbumArtist?.Trim();
                     ArtistItem artist = Locator.MusicLibraryVM._artistDatabase.LoadViaArtistName(string.IsNullOrEmpty(albumArtistName) ? artistName : albumArtistName);
                     if (artist == null)
                     {
@@ -246,7 +251,7 @@ namespace VLC_WinRT.Helpers.MusicLibrary
                         });
                     }
 
-                    var albumName = mP.Album;
+                    var albumName = mP.Album?.Trim();
                     var albumYear = mP.Year;
                     AlbumItem album = await Locator.MusicLibraryVM._albumDatabase.LoadAlbumViaName(artist.Id, albumName);
                     if (album == null)
@@ -398,7 +403,6 @@ namespace VLC_WinRT.Helpers.MusicLibrary
                 width = Window.Current.Bounds.Width;
             });
             // an album is 220 pixels wide
-            width -= (int)Locator.MusicLibraryVM.SidebarState;
             var nbAlbumsPerRow = width / 220;
             return (int)nbAlbumsPerRow * 2;
 #else

@@ -26,6 +26,7 @@
                 <EntranceThemeTransition/>
             </TransitionCollection>
         </Grid.Transitions>
+        <placeholder:NothingToSeeHere Visibility="{Binding Artists.Count, Converter={StaticResource CountToVisibilityConverter}}" />
         <SemanticZoom x:Name="SemanticZoom"
                       Padding="0"
                       IsZoomOutButtonEnabled="False"
@@ -44,26 +45,12 @@
                         </triggers:EventTrigger>
                     </triggers:Interactions.Triggers>
                     <ListView.GroupStyle>
-                        <GroupStyle>
-                            <GroupStyle.HeaderTemplate>
-                                <DataTemplate>
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="12" />
-                                            <RowDefinition Height="Auto" />
-                                        </Grid.RowDefinitions>
-                                        <TextBlock Grid.Row="1"
-                                                   Text="{Binding Key}"
-                                                   Foreground="{StaticResource MainColor}"
-                                                   FontSize="23" />
-                                    </Grid>
-                                </DataTemplate>
-                            </GroupStyle.HeaderTemplate>
-                        </GroupStyle>
+                        <GroupStyle HeaderTemplate="{StaticResource ListviewGroupHeaderDataTemplate}"/>
                     </ListView.GroupStyle>
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <ItemsWrapGrid Orientation="Horizontal">
+                            <ItemsWrapGrid Orientation="Horizontal"
+                                           ItemWidth="300">
                                 <ItemsWrapGrid.ChildrenTransitions>
                                     <TransitionCollection>
                                         <RepositionThemeTransition />

@@ -472,7 +472,7 @@ namespace VLC_WinRT.ViewModels
             if (media == null)
                 throw new ArgumentNullException("media", "Media parameter is missing. Can't play anything");
             Stop();
-            UseVlcLib = true; // forceVlcLib;
+            UseVlcLib = forceVlcLib;
 
             if (media is VideoItem)
             {
@@ -527,7 +527,6 @@ namespace VLC_WinRT.ViewModels
                         await Locator.MusicPlayerVM.SetCurrentArtist();
                         await Locator.MusicPlayerVM.SetCurrentAlbum();
                         await Locator.MusicPlayerVM.UpdatePlayingUI();
-                        Locator.Slideshow.AddImg(Locator.MusicPlayerVM.CurrentArtist.Picture);
 #if WINDOWS_APP
                         await Locator.MusicPlayerVM.UpdateWindows8UI();
                         await Locator.MusicPlayerVM.Scrobble();
@@ -570,7 +569,7 @@ namespace VLC_WinRT.ViewModels
 #if WINDOWS_PHONE_APP
                         _playerEngine = PlayerEngine.BackgroundMFPlayer;
 #else
-                        _playerEngine = PlayerEngine.MediaFoundation;
+                        _playerEngine = PlayerEngine.VLC;
 #endif
                     }
                     else
@@ -581,12 +580,8 @@ namespace VLC_WinRT.ViewModels
                     }
                 }
                 else
-                { // if it's a Video (Streams are always played with UseVlcLib flag). on WP we need smooth playback so using MediaFoundation as much as we can.
-#if WINDOWS_PHONE_APP
-                    _playerEngine = VLCFileExtensions.MFSupported.Contains(path.ToLower()) ? PlayerEngine.MediaFoundation : PlayerEngine.VLC;
-#else
-                    _playerEngine = PlayerEngine.VLC;
-#endif
+                {
+                    _playerEngine = PlayerEngine.VLC; 
                 }
             }
 

@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VLC_WinRT.Slideshow.Texts;
 using Windows.Foundation;
 using Windows.UI;
 
@@ -23,6 +24,8 @@ namespace Slide2D.Images
         int frame = 0;
         private float zoom = 0;
         private List<Img> Imgs = new List<Img>();
+        private List<Txt> Texts = new List<Txt>();
+
         private int ImgIndex = 0;
         private Img currentImg
         {
@@ -33,20 +36,25 @@ namespace Slide2D.Images
             }
         }
         
-        Color col = Color.FromArgb(150, 255, 255, 255);
         GaussianBlurEffect bl;
-        public void AddImg(Img img)
-        {
-            Imgs.Add(img);
-        }
-
+        
         public void CreateResources(ref CanvasAnimatedControl sender, ref List<Img> imgQueue)
         {
             foreach (var img in imgQueue)
             {
-                AddImg(img);
+                Imgs.Add(img);
             }
             imgQueue.Clear();
+        }
+
+        public void CreateResources(ref CanvasAnimatedControl sender, List<Txt> txtQueue)
+        {
+            Texts.Clear();
+            foreach (var txt in txtQueue)
+            {
+                Texts.Add(txt);
+            }
+            txtQueue.Clear();
         }
 
         public void Draw(CanvasAnimatedDrawEventArgs args)
@@ -113,25 +121,17 @@ namespace Slide2D.Images
                 currentImg.Opacity -= 0.003f;
             }
 
+            foreach(var text in Texts)
+            {
+                text.Draw(ref args);
+            }
+
             args.DrawingSession.DrawImage(scaleEffect, new Vector2(), new Rect()
             {
                 Height = MetroSlideshow.WindowHeight,
                 Width = MetroSlideshow.WindowWidth
             }, currentImg.Opacity);
-
-            //args.DrawingSession.DrawText("COLDPLAY", new Vector2()
-            //{
-            //    X = x,
-            //    Y = (float)(MetroSlideshow.WindowHeight / 2)
-            //}, col, texts[0].TextForm);
-
-            //args.DrawingSession.DrawText("clocks", new Vector2()
-            //{
-            //    X = (float)(MetroSlideshow.WindowWidth / 2),
-            //    Y = y
-            //}, col, texts[0].TextForm);
-
-            //args.DrawingSession.DrawText(frame.ToString(), new Vector2(), col, texts[0].TextForm);
+            
             x = x + 2;
             y++;
             threshold++;
