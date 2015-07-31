@@ -112,6 +112,9 @@
     <Content Include="..\..\vlc\WindowsPhone\vlc-$(PlatformTarget)\$(Configuration)\plugins\access\libaccess_bd_plugin.dll">
       <Link>plugins\access\libaccess_bd_plugin.dll</Link>
     </Content>
+    <Content Include="..\..\vlc\WindowsPhone\vlc-$(PlatformTarget)\$(Configuration)\plugins\access\libaccess_concat_plugin.dll">
+      <Link>plugins\access\libaccess_concat_plugin.dll</Link>
+    </Content>
     <Content Include="..\..\vlc\WindowsPhone\vlc-$(PlatformTarget)\$(Configuration)\plugins\access\libaccess_mms_plugin.dll">
       <Link>plugins\access\libaccess_mms_plugin.dll</Link>
     </Content>

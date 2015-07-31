@@ -121,6 +121,9 @@
     <Content Include="..\..\vlc\Windows\vlc-$(PlatformTarget)\$(Configuration)\plugins\access\libaccess_bd_plugin.dll">
       <Link>plugins\access\libaccess_bd_plugin.dll</Link>
     </Content>
+    <Content Include="..\..\vlc\Windows\vlc-$(PlatformTarget)\$(Configuration)\plugins\access\libaccess_concat_plugin.dll">
+      <Link>plugins\access\libaccess_concat_plugin.dll</Link>
+    </Content>
     <Content Include="..\..\vlc\Windows\vlc-$(PlatformTarget)\$(Configuration)\plugins\access\libaccess_imem_plugin.dll">
       <Link>plugins\access\libaccess_imem_plugin.dll</Link>
     </Content>
