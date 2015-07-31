@@ -18,7 +18,7 @@
                     <SolidColorBrush x:Key="ApplicationBarForegroundThemeBrush"
                                      Color="{StaticResource ApplicationBarForegroundThemeColor}" />
                     <SolidColorBrush x:Key="ApplicationOverlayTranslucentThemeBrush"
-                                     Color="#cc000000" />
+                                     Color="#d4000000" />
                     <SolidColorBrush x:Key="ApplicationBackgroundSemiTranslucentThemeBrush"
                                      Color="#AA252525" />
                     <SolidColorBrush x:Key="ApplicationBackgroundQuarterTranslucentThemeBrush"
@@ -38,6 +38,14 @@
                                      Color="{StaticResource MainColorBase}" />
                     <SolidColorBrush x:Key="TextBoxBackgroundThemeBrush"
                                      Color="#50FFFFFF" />
+                    <SolidColorBrush x:Key="ToggleSwitchCurtainBackgroundThemeBrush"
+                                     Color="{StaticResource MainColorBase}" />
+                    <SolidColorBrush x:Key="ComboBoxItemPointerOverForegroundThemeBrush"
+                                     Color="{StaticResource MainColorBase}" />
+                    <SolidColorBrush x:Key="ComboBoxItemPressedBackgroundThemeBrush"
+                                     Color="#252525" />
+                    <SolidColorBrush x:Key="ComboBoxItemPressedForegroundThemeBrush"
+                                     Color="WhiteSmoke" /> 
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="Light">
                     <Color x:Key="ApplicationPageBackgroundThemeColor">White</Color>
@@ -72,6 +80,8 @@
                                      Color="{StaticResource MainColorBase}"/>
                     <SolidColorBrush x:Key="TextBoxBackgroundThemeBrush"
                                      Color="#50FFFFFF" />
+                    <SolidColorBrush x:Key="ToggleSwitchCurtainBackgroundThemeBrush"
+                                     Color="{StaticResource MainColorBase}" />
                 </ResourceDictionary>
             </ResourceDictionary.ThemeDictionaries>
             <ResourceDictionary.MergedDictionaries>

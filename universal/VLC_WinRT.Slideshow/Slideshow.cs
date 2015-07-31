@@ -3,6 +3,7 @@ using Microsoft.Graphics.Canvas.UI.Xaml;
 using Slide2D.Images;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using VLC_WinRT.Slideshow.Texts;
 using VLC_WinRT.ViewModels;
@@ -56,6 +57,7 @@ namespace Slide2D
 
         private async void Canvas_CreateResources(CanvasAnimatedControl sender, Microsoft.Graphics.Canvas.UI.CanvasCreateResourcesEventArgs args)
         {
+            AddImg("ms-appx:///Assets/wallpaper.jpg");
         }
 
         public async void AddImg(string file)
@@ -64,7 +66,7 @@ namespace Slide2D
             var i = new Img(file);
             ImgQueue.Add(i);
 
-            foreach (var img in ImgQueue)
+            foreach (var img in ImgQueue.ToList())
             {
                 await img.Initialize(canvas);
             }

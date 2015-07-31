@@ -287,9 +287,6 @@
     <Content Include="..\..\vlc\WindowsPhone\vlc-$(PlatformTarget)\$(Configuration)\plugins\codec\libkate_plugin.dll">
       <Link>plugins\codec\libkate_plugin.dll</Link>
     </Content>
-    <Content Include="..\..\vlc\WindowsPhone\vlc-$(PlatformTarget)\$(Configuration)\plugins\codec\liblibass_plugin.dll">
-      <Link>plugins\codec\liblibass_plugin.dll</Link>
-    </Content>
     <Content Include="..\..\vlc\WindowsPhone\vlc-$(PlatformTarget)\$(Configuration)\plugins\codec\liblpcm_plugin.dll">
       <Link>plugins\codec\liblpcm_plugin.dll</Link>
     </Content>

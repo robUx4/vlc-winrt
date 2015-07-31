@@ -42,13 +42,15 @@
         <ListView Grid.Column="2"
                   x:Name="PanelsListView"
                   ItemsSource="{Binding Panels}"
-                  IsItemClickEnabled="True"
-                  SelectionMode="None"
+                  SelectedItem="{Binding CurrentPanel}"
+                  IsSwipeEnabled="False"
+                  IsItemClickEnabled="False"
+                  SelectionMode="Single"
                   ItemContainerStyle="{StaticResource ListViewItemContainerStyle}"
                   ItemTemplate="{StaticResource PivotHeaderDataTemplate}"
                   ScrollViewer.VerticalScrollBarVisibility="Disabled">
             <triggers:Interactions.Triggers>
-                <triggers:EventTrigger EventName="ItemClick">
+                <triggers:EventTrigger EventName="SelectionChanged">
                     <triggers:InvokeCommandAction Command="{Binding GoToPanelCommand}"
                                                   PassEventArgsToCommand="True" />
                 </triggers:EventTrigger>
@@ -85,20 +87,20 @@
                                    Width="270"
                                    HorizontalAlignment="Right"
                                    Margin="0,0,12,0"
-                                   TextChanged="TextBox_TextChanged"/>
+                                   TextChanged="TextBox_TextChanged"
+                                   DataContext="{Binding Source={StaticResource Locator}, Path=SearchVM}"
+                                   Text="{Binding SearchTag}"/>
 
         <AppBarButton x:Name="SearchButton"
                       Grid.Column="3"
                       HorizontalAlignment="Right"
                       Style="{StaticResource AppBarButtonStyleHorizontal}"
-                      Command="{Binding Source={StaticResource Locator}, Path=MainVM.ChangeMainPageMusicViewCommand}"
-                      CommandParameter="4">
+                      Command="{Binding Source={StaticResource Locator}, Path=MainVM.GotoSearchPageCommand}">
             <AppBarButton.Icon>
                 <FontIcon Glyph="{StaticResource SearchSymbol}"
                           FontFamily="ms-appx:SEGMDL2.TTF#Segoe MDL2 Assets" />
             </AppBarButton.Icon>
         </AppBarButton>
-
 
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
