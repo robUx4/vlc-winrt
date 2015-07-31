@@ -379,6 +379,9 @@
     <Content Include="..\..\vlc\Windows\vlc-$(PlatformTarget)\$(Configuration)\plugins\control\libhotkeys_plugin.dll">
       <Link>plugins\control\libhotkeys_plugin.dll</Link>
     </Content>
+    <Content Include="..\..\vlc\Windows\vlc-$(PlatformTarget)\$(Configuration)\plugins\demux\libadaptive_plugin.dll">
+      <Link>plugins\demux\libadaptive_plugin.dll</Link>
+    </Content>
     <Content Include="..\..\vlc\Windows\vlc-$(PlatformTarget)\$(Configuration)\plugins\demux\libaiff_plugin.dll">
       <Link>plugins\demux\libaiff_plugin.dll</Link>
     </Content>
@@ -393,9 +396,6 @@
     </Content>
     <Content Include="..\..\vlc\Windows\vlc-$(PlatformTarget)\$(Configuration)\plugins\demux\libcaf_plugin.dll">
       <Link>plugins\demux\libcaf_plugin.dll</Link>
-    </Content>
-    <Content Include="..\..\vlc\Windows\vlc-$(PlatformTarget)\$(Configuration)\plugins\demux\libdash_plugin.dll">
-      <Link>plugins\demux\libdash_plugin.dll</Link>
     </Content>
     <Content Include="..\..\vlc\Windows\vlc-$(PlatformTarget)\$(Configuration)\plugins\demux\libdemuxdump_plugin.dll">
       <Link>plugins\demux\libdemuxdump_plugin.dll</Link>
