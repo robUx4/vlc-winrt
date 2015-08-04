@@ -53,8 +53,7 @@
                         <ColumnDefinition />
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Tag="WindowsOnly"
-                               Text="Home page"
+                    <TextBlock Text="Home page"
                                FontSize="22"
                                Style="{StaticResource SubheaderTextBlockStyle}" />
                     <ComboBox Grid.Column="1"
@@ -69,6 +68,13 @@
                         </ComboBox.ItemTemplate>
                     </ComboBox>
                 </Grid>
+
+                <TextBlock Text="Animations"
+                           FontSize="22"
+                           Style="{StaticResource SubheaderTextBlockStyle}" />
+                <ToggleSwitch  Header="Use rich animations in the slideshows"
+                               IsOn="{Binding RichAnimations, Mode=TwoWay}"
+                               Margin="-6,0,0,0" />
                 <TextBlock Text="music"
                            Style="{StaticResource SubheaderTextBlockStyle}"
                            FontSize="32"
@@ -272,9 +278,14 @@
                               Header="Video playback in background"
                               IsOn="{Binding ContinueVideoPlaybackInBackground, Mode=TwoWay}"
                               Margin="-6,0,0,0" />
-                <ToggleSwitch Header="Hardware decoding when possible"
+                <ToggleSwitch Header="Hardware decoding when possible (experimental)"
                               IsOn="{Binding HardwareAccelerationEnabled, Mode=TwoWay}"
                               Margin="-6,0,0,0" />
+                <TextBlock Text="Hardware decoding may not work on your device. You need to restart the app to apply changes"
+                           Style="{StaticResource BodyTextBlockStyle}"
+                           Foreground="{StaticResource PivotHeaderForegroundUnselectedBrush}" 
+                           Margin="0,0,0,12"/>
+
             </StackPanel>
         </ScrollViewer>
     </Grid>

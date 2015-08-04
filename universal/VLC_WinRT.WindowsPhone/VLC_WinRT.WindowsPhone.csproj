@@ -341,8 +341,8 @@
     <Content Include="..\..\vlc\WindowsPhone\vlc-$(PlatformTarget)\$(Configuration)\plugins\control\libhotkeys_plugin.dll">
       <Link>plugins\control\libhotkeys_plugin.dll</Link>
     </Content>
-    <Content Include="..\..\vlc\WindowsPhone\vlc-$(PlatformTarget)\$(Configuration)\plugins\demux\libadaptive_plugin.dll">
-      <Link>plugins\demux\libadaptive_plugin.dll</Link>
+    <Content Include="..\..\vlc\WindowsPhone\vlc-$(PlatformTarget)\$(Configuration)\plugins\demux\libadaptative_plugin.dll">
+      <Link>plugins\demux\libadaptative_plugin.dll</Link>
     </Content>
     <Content Include="..\..\vlc\WindowsPhone\vlc-$(PlatformTarget)\$(Configuration)\plugins\demux\libaiff_plugin.dll">
       <Link>plugins\demux\libaiff_plugin.dll</Link>
